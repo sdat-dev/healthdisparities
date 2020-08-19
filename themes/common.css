@@ -209,8 +209,16 @@ Primary use:    Common.css file used for styling header and
     color: #46166C;
 }
 
+.yellow-font{
+    color: #eeb211;
+}
+
 .content-tool-bar{
     position: relative;
+}
+
+.italic{
+    font-style: italic;
 }
 
 #social-media-button{
