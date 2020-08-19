@@ -139,7 +139,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 #navbar-header {
-    background-color: #46166b;
+    background-color: #004C93;
     height: 90px;
     position: sticky;
     top: 0;
@@ -223,7 +223,7 @@ Primary use:    Common.css file used for styling header and
 
 #social-media-button{
     color: white;
-    background-color: #46166C;
+    background-color: #004C93;
     padding: 9px;
     font-size: 22px;
     font-weight: bold;
@@ -263,7 +263,7 @@ Primary use:    Common.css file used for styling header and
 #search-button{
     height: 40px;
     width: 40px;
-    background-color: #46166b;
+    background-color: #004C93;
     color: white;
     position: relative;
     top: 3px;
