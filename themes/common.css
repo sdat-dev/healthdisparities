@@ -276,10 +276,19 @@ Primary use:    Common.css file used for styling header and
 }
 
 .ualbany-logo {
-    margin-left: 20px;
-    vertical-align: middle;
+    margin-left: 5px;
+    margin-top: 25px;
 }
 
+.sunny-logo {
+    margin-left: 5px;
+    height: 80px;
+}
+
+.downstate-logo {
+    margin-left: 5px;
+    margin-top: 25px;
+}
 @media only screen and (max-width: 340px)
 {
     .ualbany-logo{

@@ -9,12 +9,12 @@ let addTopMenu = function(){
                                 '</div>'+    
                                 '<div class = "col-xl-4 col-lg-4 col-md-4">' +
                                     '<a href="https://www.albany.edu/">'+
-                                        '<img class="ualbany-logo" src="assets/images/SUNY-Logo.png" />'+
+                                        '<img class="sunny-logo" src="assets/images/SUNY-Logo.png" />'+
                                     '</a>'+
                                 '</div>'+  
                                 '<div class = "col-xl-4 col-lg-4 col-md-4">' +
                                     '<a href="https://www.albany.edu/">'+
-                                        '<img class="ualbany-logo" src="assets/images/SUNY-Downstate-Logo.png" />'+
+                                        '<img class="downstate-logo" src="assets/images/SUNY-Downstate-Logo.png" />'+
                                     '</a>'+
                                 '</div>'+ 
                             '</div>'+     
