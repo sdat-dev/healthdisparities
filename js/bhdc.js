@@ -64,7 +64,7 @@ request.onload = function(){
                         '<a target = "_blank" href = "'+ element.source +'">'+
                             '<div class = "home-logo-container">' +
                                 '<img class = "home-logo" src = "assets/images/' + element.logo+ '">'+
-                                '<p>'+element.content+'</p>' +
+                                '<p>'+ element.content+'</p>' +
                             '</div>'+
                         '</a>'+
                     '</div>';
@@ -106,8 +106,8 @@ let addheader =  function (headers){
         }
         content +=  '<img src="'+ source + image +'" class="d-block w-100" alt="...">'+
                     '<div id = "landing-page-text-wrapper">'+
-                        '<h1>'+ header1 +'</h1>'+ 
-                        '<p>' + header2 + '</p>'        
+                        '<h1>'+ header1 +'</h1>' + 
+                        '<p>' + header2 + '</p>' +      
                     '</div>'+
                 '</div>';
     }
