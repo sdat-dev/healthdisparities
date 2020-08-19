@@ -40,6 +40,7 @@ Primary use:    side-navigation.css file used for styling components
     font-weight: 400;
     list-style-type: none;
     padding: 10px 0px 0px 0px;
+    text-transform: uppercase;
 }
 
 .navigation-items>a, .first-sub-navigation-item>a, .last-sub-navigation-item>a, #expanded-navigation-item>a, .sub-navigation-items>a {
@@ -60,6 +61,7 @@ Primary use:    side-navigation.css file used for styling components
 
 #sub-navigation-bar {
     list-style-type: none;
+    text-transform: none;
 }
 
 .first-sub-navigation-item {
