@@ -283,6 +283,7 @@ Primary use:    Common.css file used for styling header and
 .sunny-logo {
     margin-top: 5px;
     height: 80px;
+    align-content: center;
 }
 
 .downstate-logo {
