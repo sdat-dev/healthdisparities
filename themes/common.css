@@ -209,7 +209,15 @@ Primary use:    Common.css file used for styling header and
     color: #46166C;
 }
 
+.PURPLE-FONT{
+    color: #46166C;
+}
+
 .yellow-font{
+    color: #eeb211;
+}
+
+.YELLOW-FONT{
     color: #eeb211;
 }
 
@@ -217,7 +225,15 @@ Primary use:    Common.css file used for styling header and
     color: black;
 }
 
+.BLACK-FONT{
+    color: black;
+}
+
 .blue-font{
+    color: #004C93;
+}
+
+.BLUE-FONT{
     color: #004C93;
 }
 
@@ -225,9 +241,18 @@ Primary use:    Common.css file used for styling header and
     color: #838687;
 }
 
+.GREY-FONT{
+    color: #838687;
+}
+
 .cyan-font{
     color: #009EE0;
 }
+
+.CYAN-FONT{
+    color: #009EE0;
+}
+
 .content-tool-bar{
     position: relative;
 }
