@@ -221,6 +221,13 @@ Primary use:    Common.css file used for styling header and
     color: #004C93;
 }
 
+.grey-font{
+    color: #838687;
+}
+
+.cyan-font{
+    color: #009EE0;
+}
 .content-tool-bar{
     position: relative;
 }
