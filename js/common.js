@@ -214,3 +214,14 @@ addfooter = function(){
                 '</section>';
     footer.innerHTML = content;
 }
+
+let getDistinctAttributes = function(objects, attribute){
+    let mappedAttributes = objects.map(function(object){
+        return object[attribute];
+    });
+    let distinctAttributes = mappedAttributes.filter(function(v, i, a){
+        return a.indexOf(v) === i;
+     });
+
+    return distinctAttributes;
+}
