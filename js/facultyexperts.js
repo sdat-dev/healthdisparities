@@ -10,7 +10,8 @@ request.onload = function(){
     const expertspagejson = request.response;
     //condition for checking if browser is Internet Explorer
     let expertspage =  ((false || !!document.documentMode))? JSON.parse(expertspagejson): expertspagejson;
-    let webelements = expertspage["content"];
+    let webelements = expertspage.content;
+    let experts = expertspage.experts;
     let logostart = true;
     let pageheaders = [];
     for(let i = 0; i < webelements.length; i++)
@@ -74,6 +75,7 @@ request.onload = function(){
             }
         }
     }
+    content +=buildExpertContent(experts);
     addheader(pageheaders);
     let contentElement = document.createElement('div');
     contentElement.classList.add('content');
@@ -121,57 +123,16 @@ let buildExpertContent = function(experts){
     let tabattribute = "org"
     let distincttabs = getDistinctAttributes(experts, tabattribute);
     content = createTabNavigation(distincttabs, tabattribute);
-    content += buildTabContent(distincttabs, tabattribute, experts);
-}
-
-let createTabNavigation = function(distincttabs, tabattribute)
-{
-    let navigationContent = '<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">';
-    for(let i = 0; i< distincttabs.length; i++)
-    {
-        let buttonContent = '';
-        let tabId = tabattribute + i.toString();
-        if(i == 0)
-        {
-            buttonContent = '<a class="nav-link active" id="pills-'+ tabId +'-tab" data-toggle="pill" href="#pills-'+ tabId +'" role="tab" aria-controls="pills-'+ tabId +'" aria-selected="true">'+ distincttabs[i] +'</a>';
-        }
-        else
-        {
-            buttonContent = '<a class="nav-link" id="pills-'+ tabId +'-tab" data-toggle="pill" href="#pills-'+ tabId +'" role="tab" aria-controls="pills-'+ tabId +'" aria-selected="true">'+ distincttabs[i] +'</a>';
-        }
-       
-        let linkElement = '<li class="nav-item">' + buttonContent + '</li>';
-        navigationContent += linkElement;
-    }
-    navigationContent += '</ul>';
-    return navigationContent;
-}
-
-let buildTabContent = function(distincttabs, tabattribute, experts){
-    let tabContent = '<div class="tab-content" id="pills-tabContent">';
-    
-    for(let i = 0; i< distincttabs.length; i++)
-    {
-        let tabId = tabattribute + i.toString();
+    let tabContent = [];
+    for(let i = 0; i< distincttabs.length; i++){
         let tabexperts = experts.filter(function(expert){
             return expert[tabattribute] == distincttabs[i];
         });
-
-        if(i == 0)
-        {
-            tabContent +='<div class="tab-pane fade show active" id="pills-'+ tabId +'" role="tabpanel" aria-labelledby="pills-'+ tabId +'-tab">';
-        }
-        else
-        {
-            tabContent +='<div class="tab-pane fade" id="pills-'+ tabId +'" role="tabpanel" aria-labelledby="pills-'+ tabId +'-tab">';
-        }
-        tabContent += '<div class="tab-title-container"><h3 class="tab-title"><img class="logo" src="assets/images/'+ tabexperts[0][tabattribute].toLowerCase() +'.png">'+ tabexperts[0][tabattribute].toString() +'</h3></div>';
-        tabContent += buildExperts(tabId, tabexperts);
-        tabContent += '</div>';
-
+        let tabId = tabattribute + i.toString();
+        tabContent.push(buildExperts(tabId, tabexperts));
     }
-    tabContent += '</div>';
-    return tabContent;
+    content += buildTabContent(distincttabs, tabattribute, tabContent);
+    return content;
 }
 
 //Start with level1 accordion and build one by one the levels going down.
@@ -189,8 +150,8 @@ let buildExperts = function(tabId, tabexperts){
         contactElem += buildExpertElement(level1s);
     }
     //if there is level 2 then it is accordion
-    let level1as = agencycontacts.filter(function(contact){
-        return contact.level2 != '';
+    let level1as = tabexperts.filter(function(expert){
+        return expert.level2 != '';
     });
 
     if(level1as.length > 0)
@@ -215,20 +176,21 @@ let buildExperts = function(tabId, tabexperts){
                     let headerId2 = "heading" + counter;
                     let childId2 = "child" + counter;
                     counter++;
-                    //filter level3 without level4
+                    //filter level3 
                     let level3s = level2s.filter(function(expert){
                         return expert.level1 == level1 && expert.level2 == level2;
                     });
                     //for level3s with out level4 build simple list
+                    let level3Elem = '';
                     if(level3s.length > 0)
                     {
                         level3Elem+= buildExpertElement(level3s);
                     }
-                    level2Elem+= generateAccordionSubElem(2, collapseId2, headerId2, childId1, childId2, level, level3Elem);
+                    level2Elem+= generateAccordionSubElem(2, collapseId2, headerId2, childId1, childId2, level2, level3Elem);
                 });
                 //end level2 accordion
             }  
-            contactElem+= generateAccordionSubElem(1, collapseId1, headerId1, agencyId, childId1, level, level2Elem);
+            contactElem+= generateAccordionSubElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
         });
     }
     contactElem += '</div>';
