@@ -139,7 +139,7 @@ Primary use:    Common.css file used for styling header and
 }
 
 #navbar-header {
-    background-color: #004C93;
+    background-color:#004C93;
     height: 90px;
     position: sticky;
     top: 0;
@@ -251,6 +251,14 @@ Primary use:    Common.css file used for styling header and
 
 .CYAN-FONT{
     color: #009EE0;
+}
+
+.deepblue-font{
+    color: #000033;
+}
+
+.DEEPBLUE-FONT{
+    color: #000033;
 }
 
 .content-tool-bar{
