@@ -1,0 +1,67 @@
+.nav-pills, .nav-item a, .nav-links {
+    color: #004C93;
+    text-transform: uppercase;
+}
+
+.expert-info{
+    margin-right: 15%;
+    margin-bottom: 40px;
+}
+
+.expert-info a{
+    color: #004C93;
+}
+
+.expert-image{
+    width: 200px;
+    float: right;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    clear: both;
+}
+
+.icon-container  img{
+    width: 30px;
+    margin: 5px 10px 10px 0px;
+}
+
+@media screen and (max-width: 1192px)
+{
+    .expert-info{
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 991px)
+{
+    .expert-image{
+        float: left;
+        margin-right: 200px;
+        margin-left: 0px;
+        padding-bottom: 10px;
+    }
+    .expert-info{
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 767px)
+{
+    .expert-image{
+        float: right;
+        margin-left: 20px;
+        margin-right: 0px;
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 600px)
+{
+    .expert-image{
+        float: left;
+        margin-left: 0px;
+        margin-right: 60%;
+        padding-bottom: 10px;
+    }
+}
