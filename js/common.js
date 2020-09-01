@@ -1,4 +1,4 @@
-let sidemenuItems = [{"item":"Home","link":"home.html"},{"item":"About the Center","link":"aboutthecenter.html"},{"item":"Why Disparities is a Challenge","link":"whydisparitiesisachallenge.html"},{"item":"How the Center Works","link":"howthecenterworks.html"},{"item":"Unique Opportunity for NY","link":"uniqueopportunityforny.html"},{"item":"Faculty Experts","link":"facultyexperts.html"},{"item":"About the Partners","link":"#","subItems":[{"item":"CEMHD","link":"cemhd.html"},{"item":"BHDC","link":"bhdc.html"}]},{"item":"Contact","link":"contact.html"}]
+let sidemenuItems = [{"item":"Home","link":"home.html"},{"item":"About the Center","link":"aboutthecenter.html"},{"item":"Why Disparities is a Challenge","link":"whydisparitiesisachallenge.html"},{"item":"How the Center Works","link":"howthecenterworks.html"},{"item":"Unique Opportunity for NY","link":"uniqueopportunityforny.html"},{"item":"Faculty Experts","link":"facultyexperts.html"},{"item":"About the Partners","link":"#","subItems":[{"item":"CEMHD","link":"cemhd.html"},{"item":"BHDC","link":"bhdc.html"}]},{"item":"Funding Opportunities","link":"fundingopportunities.html"},{"item":"Contact","link":"contact.html"}]
 //SideMenu Start
 //What evet written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
 
@@ -224,4 +224,12 @@ let getDistinctAttributes = function(objects, attribute){
      });
 
     return distinctAttributes;
+}
+
+let appendMainContent = function(maincontentContainer, content){
+    let mainContentElement = document.createElement('div');
+    mainContentElement.classList.add('accordion');
+    mainContentElement.id = 'accordionExample';
+    mainContentElement.innerHTML = content.trim();
+    maincontentContainer.appendChild(mainContentElement);
 }
