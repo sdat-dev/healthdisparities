@@ -1,4 +1,4 @@
-let requestURL = "data/facultyexperts.json";
+let requestURL = "data/facultyexperts.json"; 
 let request = new XMLHttpRequest();
 //getting content Element to append grants information
 let maincontentContainer = document.getElementsByClassName('main-content')[0];
@@ -141,21 +141,7 @@ let buildExperts = function(tabId, tabexperts){
     let counter = 1; 
     let contactElem = '';
     contactElem += '<div id = "' + tabId + '">';
-    let level1s = tabexperts.filter(function(expert){
-        return expert.level1 == '';
-    });
-    //if there is no level1 then it is added outside accordion
-    if(level1s.length > 0)
-    {
-        contactElem += buildExpertElements(level1s);
-    }
-    //if there is level 2 then it is accordion
-    let level1as = tabexperts.filter(function(expert){
-        return expert.level1 != '';
-    });
-    if(level1as.length > 0)
-    {
-        let distinctLevel1s = getDistinctAttributes(level1as, 'level1');
+    let distinctLevel1s = getDistinctAttributes(tabexperts, 'level1');
         distinctLevel1s.sort();
         distinctLevel1s.forEach(function(level1) {
             let collapseId1 = "collapse" + counter;
@@ -164,10 +150,9 @@ let buildExperts = function(tabId, tabexperts){
             counter++;
             let level2Elem = '';
             //filter level2s
-            let level2s = level1as.filter(function(expert){
+            let level2s = tabexperts.filter(function(expert){
                 return expert.level1 == level1;
             }); 
-            //build accordion
             if(level2s.length > 0)
             {
                 let distinctLevel2s = getDistinctAttributes(level2s, 'level2');
@@ -179,29 +164,15 @@ let buildExperts = function(tabId, tabexperts){
                     counter++;
                     //filter level3 
                     let level3s = level2s.filter(function(expert){
-                        return expert.level1 == level1 && expert.level2 == level2;
+                        return expert.level2 == level2;
                     });
                     level3s.sort((a,b) => b.firstName - a.firstName)
-                    //for level3s with out level4 build simple list
-                    let level3Elem = '';
-                    if(level3s.length > 0)
-                    {
-                        level3Elem+= buildExpertElements(level3s);
-                    }
-                    if(level2 == '')
-                    {
-                        level2Elem+= level3Elem;
-                    }
-                    else 
-                    {
-                        level2Elem+= generateAccordionElem(2, collapseId2, headerId2, childId1, childId2, level2, level3Elem);
-                    }
+                    //for level2s build simple list
+                    level2Elem+= buildExpertElements(level3s);
                 });
-                //end level2 accordion
             }  
             contactElem+= generateAccordionElem(1, collapseId1, headerId1, tabId, childId1, level1, level2Elem);
         });
-    }
     contactElem += '</div>';
     //end level1 accordion
     return contactElem;
