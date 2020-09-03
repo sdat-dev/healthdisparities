@@ -225,11 +225,3 @@ let getDistinctAttributes = function(objects, attribute){
 
     return distinctAttributes;
 }
-
-let appendMainContent = function(maincontentContainer, content){
-    let mainContentElement = document.createElement('div');
-    mainContentElement.classList.add('accordion');
-    mainContentElement.id = 'accordionExample';
-    mainContentElement.innerHTML = content.trim();
-    maincontentContainer.appendChild(mainContentElement);
-}
