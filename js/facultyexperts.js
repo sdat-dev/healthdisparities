@@ -216,7 +216,7 @@ let buildExpertElements = function(experts){
                     '<a class = "no-link-decoration" href = ' + expert.institutePage + '>' + expert.firstName + ' '+ expert.lastName + '</a></h2><h5 class = "content-header-no-margin faculty-title">'+ (expert.title != ''? expert.title + ',<br>':'') +
                     institution + '</h5>'+ generateLogoContent(expert) +'<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + expert.email + 
                     '>'+ expert.email+ '</a><br>'+ (expert.phone != ""? '<strong>Phone: </strong>'+ expert.phone + '<br>': "")+'<strong>Research Interests: </strong>'+ expert .researchInterests + '</p><p>' + 
-                    expert.researchDescription +'</p></div>';
+                    expert.researchDescription +'</p>'+ generateProjectsContent(expert.projects) +'</div>';
     }
     return content;
 }
