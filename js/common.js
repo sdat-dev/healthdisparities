@@ -110,7 +110,7 @@ let generateAccordionElem = function(level, collapseId, headerId, parentId, chil
     var headerno = level + 2;
     let accordionElem =  '<div class = "card"><div class="card-header level'+ level +'" id="'+ headerId + '">' +
                             '<button class="btn btn-link" data-toggle="collapse" data-target="#'+ collapseId + '" aria-expanded="false" aria-controls="' + collapseId + '">'+
-                            '<h'+ headerno +' class = "content-header-no-margin">' + header + '<i class="fas fa-chevron-down" style="padding-left:10px"  ></i></h'+ headerno +'></button></div>'
+                            '<h'+ headerno +' class = "content-header-no-margin">' + header + '<i class="fas fa-chevron-down" style="padding-left:10px;"  ></i></h'+ headerno +'></button></div>'
                         + '<div id="'+ collapseId + '" class = "collapse" aria-labelledby= "'+ headerId + '" data-parent="#'+ parentId +'"> <div class = "card-body" id="'+ childId +'">'
                         + accordionContent +'</div></div></div>';  
     return accordionElem;
