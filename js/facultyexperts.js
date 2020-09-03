@@ -222,13 +222,6 @@ let buildExpertElements = function(experts){
 }
 
 let generateProjectsContent = function(projects){
-
-
-
-    if(typeof projects === "undefined"){
-       
-    }
-    else{
     let linkContent = '';
     for(let i = 0; i < projects.length; i++)
     {
@@ -241,7 +234,6 @@ let generateProjectsContent = function(projects){
     '<b class = "purple-font">Ongoing Research/Scholarship Related Projects</b><ul class = "sub-list">'
     + linkContent + '</ul>': '';
     return linkContent;
-}
 }
 
 let generateLogoContent = function(expert){
