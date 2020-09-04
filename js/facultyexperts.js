@@ -153,9 +153,10 @@ let buildExperts = function(tabId, tabexperts){
         for(var i =0; i < distinctLevel1s.length; i++){
             if(distinctLevel1s[i] === "Other"){
                 distinctLevel1s.splice(i, 1);
+                distinctLevel1s.push("Other");
+                break;
             }
         }
-        distinctLevel1s.push("Other");
         distinctLevel1s.forEach(function(level1) {
             let collapseId1 = "collapse" + counter;
             let headerId1 = "heading" + counter;
@@ -171,9 +172,6 @@ let buildExperts = function(tabId, tabexperts){
                 let distinctLevel2s = getDistinctAttributes(level2s, 'level2');
                 distinctLevel2s.sort();
                 distinctLevel2s.forEach(function(level2){
-                    let collapseId2 = "collapse" + counter;
-                    let headerId2 = "heading" + counter;
-                    let childId2 = "child" + counter;
                     counter++;
                     //filter level3 
                     let level3s = level2s.filter(function(expert){
