@@ -295,7 +295,7 @@ Primary use:    Common.css file used for styling header and
     margin-bottom: 0px;
 }
 
-.main-content> #search-box{
+.content> #search-box{
     background-color: #F9F9F9;
     height: 40px;
     border: 1px solid #B9B9B9;
@@ -304,7 +304,7 @@ Primary use:    Common.css file used for styling header and
     padding: 5px 0px 10px 2px;
 }
 
-.main-content>#search-box-results{
+.content>#search-box-results{
     display: block;
 }
 
@@ -314,7 +314,7 @@ Primary use:    Common.css file used for styling header and
     background-color: #004C93;
     color: white;
     position: relative;
-    top: 3px;
+    top: 2px;
     left: -1px;
 }
 
@@ -352,7 +352,7 @@ Primary use:    Common.css file used for styling header and
     #landing-page-text-wrapper
     {   
         bottom: 10%;
-        width: 55%;
+        width: 35%;
     }
     #landing-page-text-wrapper>h1
     {
@@ -372,11 +372,11 @@ Primary use:    Common.css file used for styling header and
     .main-content>ul, .main-content>ol {
         margin-left: 20px;
     }
-    .main-content> #search-box{       
+    .content> #search-box{       
         margin-bottom: 5px;
         width: 80%;
     }   
-    .main-content>#search-box-results{
+    .content>#search-box-results{
         margin-bottom: 30px;
     }
 }
@@ -386,7 +386,7 @@ Primary use:    Common.css file used for styling header and
     #landing-page-text-wrapper
     {   
         bottom: 10%;
-        width: 66%;
+        width: 40%;
     }
     #landing-page-text-wrapper>h1
     {
@@ -403,12 +403,12 @@ Primary use:    Common.css file used for styling header and
     .main-content>ul, .main-content>ol {
         margin-left: 20px;
     }
-    .main-content> #search-box{       
+    .content> #search-box{       
         margin-bottom: 5px;
         width: 60%;
     }
     
-    .main-content>#search-box-results{
+    .content>#search-box-results{
         margin-bottom: 30px;
     }
 }
@@ -418,7 +418,7 @@ Primary use:    Common.css file used for styling header and
     #landing-page-text-wrapper
     {
         bottom: 10%;
-        width: 61%;
+        width: 40%;
     }
     #landing-page-text-wrapper>h1
     {
@@ -441,25 +441,25 @@ Primary use:    Common.css file used for styling header and
     .main-content>ul, .main-content>ol {
         margin-left: 90px;
     }
-    .main-content> #search-box{       
-        margin: 0px 0px 5px 50px;
+    .content> #search-box{       
+        margin: 0px 0px 5px 0px;
         width: 255px;
     }
-    .main-content>#search-box-results{
-        margin: 0px 0px 20px 50px;
+    .content>#search-box-results{
+        margin: 0px 0px 20px 0px;
     }
 }
 
 @media only screen and (min-width: 992px) {
 
-    .main-content> #search-box{       
+    .content> #search-box{       
         width: 510px;
     }
     
     #landing-page-text-wrapper
     {
         bottom: 10%;
-        width: 61%;
+        width: 40%;
     }
     #landing-page-text-wrapper>h1
     {
@@ -481,7 +481,7 @@ Primary use:    Common.css file used for styling header and
     #landing-page-text-wrapper
     {
         bottom: 10%;
-        width: 62%;
+        width: 40%;
     }
     #landing-page-text-wrapper>h1
     {

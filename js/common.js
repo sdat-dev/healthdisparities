@@ -1,4 +1,4 @@
-let sidemenuItems = [{"item":"Home","link":"home.html"},{"item":"About the Center","link":"aboutthecenter.html"},{"item":"Why Disparities is a Challenge","link":"whydisparitiesisachallenge.html"},{"item":"How the Center Works","link":"howthecenterworks.html"},{"item":"Unique Opportunity for NY","link":"uniqueopportunityforny.html"},{"item":"Faculty Experts","link":"facultyexperts.html"},{"item":"About the Partners","link":"#","subItems":[{"item":"CEMHD","link":"cemhd.html"},{"item":"BHDC","link":"bhdc.html"}]},{"item":"Contact","link":"contact.html"}]
+let sidemenuItems = [{"item":"Home","link":"home.html"},{"item":"About the Center","link":"aboutthecenter.html"},{"item":"Why Disparities is a Challenge","link":"whydisparitiesisachallenge.html"},{"item":"How the Center Works","link":"howthecenterworks.html"},{"item":"Unique Opportunity for NY","link":"uniqueopportunityforny.html"},{"item":"Faculty Experts","link":"facultyexperts.html"},{"item":"About the Partners","link":"#","subItems":[{"item":"CEMHD","link":"cemhd.html"},{"item":"BHDC","link":"bhdc.html"}]},{"item":"Funding Opportunities","link":"fundingopportunities.html"},{"item":"Contact","link":"contact.html"}]
 //SideMenu Start
 //What evet written  before '//SideMenu Start' will be relace with sidemenuItems in automation scripts
 
@@ -110,7 +110,7 @@ let generateAccordionElem = function(level, collapseId, headerId, parentId, chil
     var headerno = level + 2;
     let accordionElem =  '<div class = "card"><div class="card-header level'+ level +'" id="'+ headerId + '">' +
                             '<button class="btn btn-link" data-toggle="collapse" data-target="#'+ collapseId + '" aria-expanded="false" aria-controls="' + collapseId + '">'+
-                            '<h'+ headerno +' class = "content-header-no-margin">' + header + '<i class="fas fa-chevron-down"></i></h'+ headerno +'></button></div>'
+                            '<h'+ headerno +' class = "content-header-no-margin">' + header + '<i class="fas fa-chevron-down" style="padding-left:10px;"  ></i></h'+ headerno +'></button></div>'
                         + '<div id="'+ collapseId + '" class = "collapse" aria-labelledby= "'+ headerId + '" data-parent="#'+ parentId +'"> <div class = "card-body" id="'+ childId +'">'
                         + accordionContent +'</div></div></div>';  
     return accordionElem;
@@ -224,4 +224,12 @@ let getDistinctAttributes = function(objects, attribute){
      });
 
     return distinctAttributes;
+}
+
+let appendMainContent = function(maincontentContainer, content){
+    let mainContentElement = document.createElement('div');
+    mainContentElement.classList.add('accordion');
+    mainContentElement.id = 'accordionExample';
+    mainContentElement.innerHTML = content.trim();
+    maincontentContainer.appendChild(mainContentElement);
 }

@@ -75,6 +75,9 @@ request.onload = function(){
             }
         }
     }
+    content += '<input id = "search-box" placeholder = "Search Experts...">'+
+                    '<button id = "search-button" type = "submit"><i class="fa fa-search"></i></button>'+
+                '<br><span id = "search-box-results"></span>';
     content +=buildExpertContent(experts);
     addheader(pageheaders);
     let contentElement = document.createElement('div');
@@ -82,6 +85,10 @@ request.onload = function(){
     contentElement.innerHTML = content.trim();
     maincontentContainer.appendChild(contentElement);
     addfooter();
+    let searchbox = document.getElementById('search-box');
+    let searchbutton = document.getElementById('search-button');
+    searchbox.onkeyup = searchfunction;
+    searchbutton.onclick = searchfunction;
 }
 
 let addheader =  function (headers){
@@ -143,6 +150,12 @@ let buildExperts = function(tabId, tabexperts){
     contactElem += '<div id = "' + tabId + '">';
     let distinctLevel1s = getDistinctAttributes(tabexperts, 'level1');
         distinctLevel1s.sort();
+        for(var i =0; i < distinctLevel1s.length; i++){
+            if(distinctLevel1s[i] === "Other"){
+                distinctLevel1s.splice(i, 1);
+            }
+        }
+        distinctLevel1s.push("Other");
         distinctLevel1s.forEach(function(level1) {
             let collapseId1 = "collapse" + counter;
             let headerId1 = "heading" + counter;

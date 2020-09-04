@@ -1,15 +1,15 @@
-//getting search-box Element
-let searchbox = document.getElementById('search-box');
-let searchbutton = document.getElementById('search-button');
-
-//getting sub-accordions within accordions to toggle display
-let accordionContainers = document.getElementsByClassName('accordion-container');
-//getting accordionElems to toggle display
-let cardElems = document.getElementsByClassName('card');
-//getting individual content withing sub-accordions to toggle display
-let accordionContent = document.getElementsByClassName('accordion-content');
 searchfunction = function()
 {   
+    //getting search-box Element
+    let searchbox = document.getElementById('search-box');
+    let searchbutton = document.getElementById('search-button');
+
+    //getting sub-accordions within accordions to toggle display
+    let accordionContainers = document.getElementsByClassName('accordion-container');
+    //getting accordionElems to toggle display
+    let cardElems = document.getElementsByClassName('card');
+    //getting individual content withing sub-accordions to toggle display
+    let accordionContent = document.getElementsByClassName('accordion-content');
     //Setting display to none for all accordion and sub-accordionElems
     if(cardElems.length > 0)
     {
@@ -112,5 +112,3 @@ searchfunction = function()
              }
         }
 }
-searchbox.onkeyup = searchfunction;
-searchbutton.onclick = searchfunction;
