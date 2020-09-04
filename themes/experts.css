@@ -6,6 +6,7 @@
 .expert-info{
     margin-right: 15%;
     margin-bottom: 40px;
+    min-height: 200px;
 }
 
 .expert-info a{
