@@ -26,7 +26,7 @@
 function getAccordiationData(p) {
     let maincontentContainer = document.getElementsByClassName('main-content')[0];
     var covid_data = p;
-    let distinctCategories = ['NSF', 'NIH', 'Federal - Others', 'Others'];
+    let distinctCategories = ['NIH','NSF', 'Federal - Others', 'Others'];
     let FederalsubCategories = ['Federal - All CDC', 'Federal - All HHS', 'Federal - All DoD', 'Federal - All DoE'];
     let content = '';
     let categoryCounter = 1;
