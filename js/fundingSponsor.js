@@ -24,7 +24,7 @@
     });
 
 function getAccordiationData(p) {
-    let maincontentContainer = document.getElementsByClassName('main-content')[0];
+    let maincontentContainer = document.getElementsByClassName('content')[0];
     var covid_data = p;
     let distinctCategories = ['NIH','NSF', 'Federal - Others', 'Others'];
     let FederalsubCategories = ['Federal - All CDC', 'Federal - All HHS', 'Federal - All DoD', 'Federal - All DoE'];

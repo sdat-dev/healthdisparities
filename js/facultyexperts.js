@@ -199,7 +199,7 @@ let buildExpertElements = function(experts){
         content += '<div class = "search-container expert-info"><img class = "expert-image" src = "assets/images/' + (expert.photo != ''? 'experts/'+ expert.photo : 'placeholder.jpg') +'"/> <h2 class = "content-header-no-margin">' +
                     '<a class = "no-link-decoration" href = ' + expert.institutePage + '>' + expert.firstName + ' '+ expert.lastName + '</a></h2><h5 class = "content-header-no-margin faculty-title">'+ (expert.title != ''? expert.title + ',<br>':'') +
                     institution + '</h5>'+ generateLogoContent(expert) +'<p class = "faculty-description"><strong>Email: </strong> <a class = "email-link" href = mailto:' + expert.email + 
-                    '>'+ expert.email+ '</a><br>'+ (expert.phone != ""? '<strong>Phone: </strong>'+ expert.phone + '<br>': "")+'<strong>Research Interests: </strong>'+ expert .researchInterests + '</p><p>' + 
+                    '>'+ expert.email+ '</a><br>'+ (expert.phone != ""? '<strong>Phone: </strong>'+ expert.phone + '<br>': "")+'<strong>Research Interests: </strong>'+ (expert.researchInterests == 'N/A'? "to be updated" : expert.researchInterests) + '</p><p>' + 
                     expert.researchDescription +'</p>'+ generateProjectsContent(expert.projects) +'</div>';
     }
     return content;
