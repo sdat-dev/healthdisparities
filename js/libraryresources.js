@@ -16,8 +16,9 @@ request.onload = function(){
 
     let navContent = createAgencyNavigation(distinctAgencies);
     let tabContent = buildTabContent(distinctAgencies, libraryresources);
+    pdatecontentHeading("Library Resources");
+    appendPostDate(maincontentContainer, libraryresources[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
-    appendPostDate(libraryresources[0].updateddate)  
 }
 
 let createAgencyNavigation = function(distinctAgencies)

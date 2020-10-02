@@ -16,8 +16,9 @@ request.onload = function(){
 
     let navContent = createAgencyNavigation(distinctAgencies);
     let tabContent = buildTabContent(distinctAgencies, videoresources);
-    appendMainContent(maincontentContainer, navContent + tabContent); 
-    appendPostDate(videoresources[0].updateddate) 
+    pdatecontentHeading("Video Resources");
+    appendPostDate(maincontentContainer, videoresources[0].updateddate);
+    appendMainContent(maincontentContainer, navContent + tabContent);
 }
 
 let createAgencyNavigation = function(distinctAgencies)

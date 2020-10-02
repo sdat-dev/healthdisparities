@@ -34,7 +34,6 @@ request.onload = function(){
                             {Name:'National Institute of Justice (NIJ)', Acronym:'NIJ'},
                             {Name:'Substance Abuse and Mental Health Services Administration (SAMHSA)', Acronym:'SAMHSA'},
                             {Name:'U.S. Department of Agriculture (USDA)', Acronym:'USDA'}];
-    let content = '';
     const proposalGuidances = request.response;
     //condition for checking if browser is Internet Explorer
     let proposalGuidance =  ((false || !!document.documentMode))? JSON.parse(proposalGuidances): proposalGuidances;
@@ -43,8 +42,10 @@ request.onload = function(){
 
     let navContent = createAgencyNavigation(distinctAgencies, agencyAcronyms);
     let tabContent = buildAgencyTabContent(distinctAgencies, proposalGuidance, headers_sort, agencyAcronyms);
+    
+    updatecontentHeading("Proposal Preparation");
+    appendPostDate(maincontentContainer, proposalGuidance[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
-    appendPostDate(proposalGuidance[0].updateddate) 
 }
 
 let createAgencyNavigation = function(distinctAgencies, agencyAcronyms)
