@@ -140,7 +140,7 @@ Primary use:    Common.css file used for styling header and
 
 #navbar-header {
     background-color:#004C93;
-    height: 90px;
+    height: 100px;
     position: sticky;
     top: 0;
     width: 100%;
@@ -319,25 +319,37 @@ Primary use:    Common.css file used for styling header and
 }
 
 .ualbany-logo-wrapper {
-    height: 90px;
+    height: 100px;
     width: 100%;
 }
 
 .ualbany-logo {
     margin-left: 5px;
+    margin-top: 30px;
+}
+
+.nysdoh-logo {
     margin-top: 25px;
+    margin-right: 5px;
 }
 
 .sunny-logo {
-    margin-top: 5px;
-    height: 80px;
-    align-content: center;
+    max-width: 100px;
+    width:100%;
 }
 
 .downstate-logo {
-    margin-top: 10px;
-    height: 70px;
+    margin-top: 20px;
     margin-right: 5px;
+    max-width: 222px;
+    width:100%;
+}
+
+.upstate-logo {
+    margin-top: 25px;
+    margin-right: 5px;
+    max-width: 170px;
+    width:100%;
 }
 
 .sponsor-title-container{

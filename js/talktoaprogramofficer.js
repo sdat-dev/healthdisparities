@@ -1,4 +1,4 @@
-let requestURL = "data/pointsofcontact.json";
+let requestURL = "data/talktoaprogramofficer.json";
 let request = new XMLHttpRequest();
 //getting content Element to append grants information
 let maincontentContainer = document.getElementsByClassName('main-content')[0];
@@ -15,10 +15,10 @@ request.onload = function(){
     distinctAgencies = customSort(agencies_sort, distinctAgencies);
 
     let navContent = createAgencyNavigation(distinctAgencies);
-    let tabContent = buildTabContent(distinctAgencies, pointsofcontact);
+    let tabContent = buildAgencyContacts(distinctAgencies, pointsofcontact);
     
-    pdatecontentHeading("Points of Contact");
-    appendPostDate(maincontentContainer, pointsofcontact[0].updateddate);
+    updatecontentHeading("Points of Contact");
+    //appendPostDate(maincontentContainer, pointsofcontact[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }
 
@@ -45,7 +45,7 @@ let createAgencyNavigation = function(distinctAgencies)
     return navigationContent;
 }
 
-let buildTabContent = function(distinctAgencies, pointsofcontact){
+let buildAgencyContacts = function(distinctAgencies, pointsofcontact){
     let tabContent = '<div class="tab-content" id="pills-tabContent">';
     
     for(let i = 0; i< distinctAgencies.length; i++)
@@ -63,7 +63,7 @@ let buildTabContent = function(distinctAgencies, pointsofcontact){
         {
             tabContent +='<div class="tab-pane fade" id="pills-'+ agencyId +'" role="tabpanel" aria-labelledby="pills-'+ agencyId +'-tab">';
         }
-        tabContent += '<div class="sponsor-title-container"><h3 class="sponsor-title"><img class="logo" src="assets/logos/sponsor_logos/'+ agencycontacts[0].acronym.toLowerCase() +'.png">'+ agencycontacts[0].agency.toString() +'</h3></div>';
+        tabContent += '<div class="sponsor-title-container"><h3 class="sponsor-title"><img class="logo" src="assets/sponsor_logos/'+ agencycontacts[0].acronym.toLowerCase() +'.png">'+ agencycontacts[0].agency.toString() +'</h3></div>';
         tabContent += buildContacts(agencyId, agencycontacts);
         tabContent += '</div>';
 
@@ -150,15 +150,15 @@ let buildContacts = function(agencyId, agencycontacts){
                             });
                             let level4Elem = '';
                             level4Elem += buildDivisionElement(level4s, 'level4');
-                            level3Elem+= generateAccordionSubElem(3, collapseId3, headerId3, childId2, childId3, level, level4Elem);
+                            level3Elem+= generateAccordionElem(3, collapseId3, headerId3, childId2, childId3, level, level4Elem);
                         }); 
                         //end level3 accordion
                     }
-                    level2Elem+= generateAccordionSubElem(2, collapseId2, headerId2, childId1, childId2, level, level3Elem);
+                    level2Elem+= generateAccordionElem(2, collapseId2, headerId2, childId1, childId2, level, level3Elem);
                 });
                 //end level2 accordion
             }  
-            contactElem+= generateAccordionSubElem(1, collapseId1, headerId1, agencyId, childId1, level, level2Elem);
+            contactElem+= generateAccordionElem(1, collapseId1, headerId1, agencyId, childId1, level, level2Elem);
         });
     }
     contactElem += '</div>';
@@ -195,14 +195,4 @@ let buildDivisionElement = function(divisions, level){
         content = content + '</ul>';
         return content;
     }
-}
-
-let generateAccordionSubElem = function(level, collapseId, headerId, parentId, childId, header, accordionContent){
-    var headerno = level + 2;
-    let accordionElem =  '<div class = "card"><div class="card-header level'+ level +'" id="'+ headerId + '">' +
-                          '<button class="btn btn-link" data-toggle="collapse" data-target="#'+ collapseId + '" aria-expanded="false" aria-controls="' + collapseId + '">'+
-                            '<h'+ headerno +' class = "content-header-no-margin">' + header + '<i class="fas fa-chevron-down"></i></h'+ headerno +'></button></div>'
-                        + '<div id="'+ collapseId + '" class = "collapse" aria-labelledby= "'+ headerId + '" data-parent="#'+ parentId +'"> <div class = "card-body" id="'+ childId +'">'
-                        + accordionContent +'</div></div></div>';  
-    return accordionElem;
 }

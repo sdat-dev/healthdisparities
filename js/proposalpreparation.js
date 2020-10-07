@@ -44,7 +44,7 @@ request.onload = function(){
     let tabContent = buildAgencyTabContent(distinctAgencies, proposalGuidance, headers_sort, agencyAcronyms);
     
     updatecontentHeading("Proposal Preparation");
-    appendPostDate(maincontentContainer, proposalGuidance[0].updateddate);
+    //appendPostDate(maincontentContainer, proposalGuidance[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }
 
@@ -123,15 +123,16 @@ let buildAgencyTabContent = function(distinctAgencies, proposalGuidance, headers
                                 buildLinkContent(subGuidances);
             });
            }
-           let headerId = "collapse" + accordionCounter;
-           let headingId = "heading" + accordionCounter;
+           let collapseId1 = "collapse" + accordionCounter;
+           let headerId1 = "heading" + accordionCounter;
+           let childId1 = "child" + accordionCounter;
            if(header.trim() == '')
            {
             accordionElemContent+= linkcontent;
            }
            else
            {
-            accordionElemContent+= generateAccordionElem(headerId, headingId, header, linkcontent);
+            accordionElemContent+= generateAccordionElem(1, collapseId1, headerId1, agencyId, childId1, header, linkcontent);
             accordionCounter++;
            }
         });
@@ -182,8 +183,8 @@ let buildLinkContent = function(guidance){
     return content;
 }
 
-let wrapAccordionContent = function(accordionElemContent)
+let wrapAccordionContent = function(agencyId, accordionElemContent)
 {
-    let content = '<div class = "accordion" id = "accordionExample">'+ accordionElemContent + '</div>';
+    let content = '<div class = "accordion" id = "'+ agencyId +'">'+ accordionElemContent + '</div>';
     return content;
 }

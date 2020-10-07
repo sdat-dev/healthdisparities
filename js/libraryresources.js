@@ -15,9 +15,9 @@ request.onload = function(){
     distinctAgencies = customSort(agencies_sort, distinctAgencies);
 
     let navContent = createAgencyNavigation(distinctAgencies);
-    let tabContent = buildTabContent(distinctAgencies, libraryresources);
-    pdatecontentHeading("Library Resources");
-    appendPostDate(maincontentContainer, libraryresources[0].updateddate);
+    let tabContent = buildAgencyLibResources(distinctAgencies, libraryresources);
+    updatecontentHeading("Library Resources");
+    //appendPostDate(maincontentContainer, libraryresources[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }
 
@@ -44,7 +44,7 @@ let createAgencyNavigation = function(distinctAgencies)
     return navigationContent;
 }
 
-let buildTabContent = function(distinctAgencies, libraryresources){
+let buildAgencyLibResources = function(distinctAgencies, libraryresources){
     let tabContent = '<div class="tab-content" id="pills-tabContent">';
     
     for(let i = 0; i< distinctAgencies.length; i++)
@@ -64,7 +64,7 @@ let buildTabContent = function(distinctAgencies, libraryresources){
         }
 
         if(agencyresources[0].acronym != 'General')
-            tabContent += '<h3 class="sponsor-title"><img class="logo" src="assets/logos/sponsor_logos/'+ agencyresources[0].acronym.toLowerCase() +'.png">'+ agencyresources[0].agency.toString() +'</h3>';
+            tabContent += '<h3 class="sponsor-title"><img class="logo" src="assets/sponsor_logos/'+ agencyresources[0].acronym.toLowerCase() +'.png">'+ agencyresources[0].agency.toString() +'</h3>';
         agencyresources.forEach(function(agencyresource) {
             tabContent += buildResourceInfo(agencyresource);
         });

@@ -15,9 +15,9 @@ request.onload = function(){
     distinctAgencies = customSort(agencies_sort, distinctAgencies);
 
     let navContent = createAgencyNavigation(distinctAgencies);
-    let tabContent = buildTabContent(distinctAgencies, videoresources);
-    pdatecontentHeading("Video Resources");
-    appendPostDate(maincontentContainer, videoresources[0].updateddate);
+    let tabContent = buildAgencyVideos(distinctAgencies, videoresources);
+    updatecontentHeading("Video Resources");
+    //appendPostDate(maincontentContainer, videoresources[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }
 
@@ -44,7 +44,7 @@ let createAgencyNavigation = function(distinctAgencies)
     return navigationContent;
 }
 
-let buildTabContent = function(distinctAgencies, videoresources){
+let buildAgencyVideos = function(distinctAgencies, videoresources){
     let tabContent = '<div class="tab-content" id="pills-tabContent">';
     
     for(let i = 0; i< distinctAgencies.length; i++)
@@ -62,7 +62,7 @@ let buildTabContent = function(distinctAgencies, videoresources){
         {
             tabContent +='<div class="tab-pane fade" id="pills-'+ agencyId +'" role="tabpanel" aria-labelledby="pills-'+ agencyId +'-tab">';
         }
-        tabContent += '<div class="sponsor-title-container"><h3 class="sponsor-title"><img class="logo" src="assets/logos/sponsor_logos/'+ agencyvideos[0].acronym.toLowerCase() +'.png">'+ agencyvideos[0].agency.toString() +'</h3></div>';
+        tabContent += '<div class="sponsor-title-container"><h3 class="sponsor-title"><img class="logo" src="assets/sponsor_logos/'+ agencyvideos[0].acronym.toLowerCase() +'.png">'+ agencyvideos[0].agency.toString() +'</h3></div>';
         tabContent += buildVideos(agencyvideos);
         tabContent += '</div>';
 
@@ -82,7 +82,8 @@ let buildVideos = function(agencyvideos){
         let videoContent = buildVideoContent(videos);
         let headerId = "collapse" + accordionCounter;
         let headingId = "heading" + accordionCounter;
-        videoElem+= generateAccordionElem(headerId, headingId, videos[0].type, videoContent);
+        let childId = "child" + accordionCounter;
+        videoElem+= generateAccordionElem(1, headerId, headingId, "accordionExample", childId, videos[0].type, videoContent);
         accordionCounter++;  
     });
     videoElem += '</div>';
