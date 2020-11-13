@@ -103,7 +103,7 @@ let buildAgencyTabContent = function(distinctAgencies, proposalGuidance, headers
         let accordionElemContent = '';
         distinctHeaders = customSort(headers_sort, distinctHeaders);
         distinctHeaders.forEach(function(header) {
-           
+         
            let mainGuidances = agencyGuidance.filter(function(guidance){
                return guidance.mainheader == header;
            });
@@ -136,7 +136,7 @@ let buildAgencyTabContent = function(distinctAgencies, proposalGuidance, headers
             accordionCounter++;
            }
         });
-        tabContent = tabContent + wrapAccordionContent(accordionElemContent) + '</div>';
+        tabContent = tabContent + wrapAccordionContent(agencyId, accordionElemContent) + '</div>';
     }
     tabContent += '</div>';
     return tabContent;
