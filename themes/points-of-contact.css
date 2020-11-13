@@ -1,13 +1,13 @@
 .level1{
-    color: #46166C;
+    color: white;
 }
 
 .level1 > button.btn-link {
-    background-color: #46166C;
+    background-color: #004C93;
 }
 
 .level1 > button.btn-link .content-header-no-margin{
-    background-color: #46166C;
+    background-color: #004C93;
 }
 
 .level1 > .fa-chevron-down{
@@ -15,28 +15,28 @@
 }
 
 .level2{
-    color: #EEB211;
+    color: white;
 }
 
 .level2:hover{
     color: white;
-    background-color: #EEB211;
+    background-color: white;
 }
 
 .level2 > button.btn-link{
-    background-color: #EEB211;
-    color:black;
+    background-color: white;
+    color:#004C93;
     padding: 7px;
 }
 
 .level2 > button.btn-link .content-header-no-margin{
-    background-color: #EEB211;
-    color:black;
+    background-color: white;
+    color:#004C93;
 }
 
 .level2 > button.btn-link .content-header-no-margin > .fa-chevron-down{
     line-height: 28px;
-    color:black;
+    color:#004C93;
 }
 
 .level3{
