@@ -191,6 +191,7 @@ let buildDivisionElement = function(divisions, level){
             {
                 content = content + '<li><a target="_blank" href = "'+ divisions[i].link +'">'+ divisions[i][level]+'</a></li>';
             }
+            addfooter();
         }
         content = content + '</ul>';
         return content;

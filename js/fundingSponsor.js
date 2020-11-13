@@ -198,7 +198,6 @@ let generateFederalAccordionContent = function (arr, img_url, funding_name) {
             }
             else {
                 img_url = "assets/logos-funding-opportunities/SPIN_logo.png";
-               // console.log("ddd");
             }
         }
         var description = arr[i].synopsis.replace(/<[^>]*>/g, '');
@@ -232,6 +231,7 @@ let generateAccordionElement = function (divId, bootlabelId, accordionHeader, ac
         '<h3 class = "content-header-no-margin">' + accordionHeader + '<i class="fas fa-chevron-down"></i></h3></button></div>'
         + '<div id="' + divId + '" class = "collapse" data-parent="#accordionExample" aria-labelledby= "' + bootlabelId + '"> <div class = "card-body">'
         + accordionContent + '</div></div></div>';
+        addfooter();
     return accordionElem;
 }
 

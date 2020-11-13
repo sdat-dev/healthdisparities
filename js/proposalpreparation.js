@@ -137,9 +137,11 @@ let buildAgencyTabContent = function(distinctAgencies, proposalGuidance, headers
            }
         });
         tabContent = tabContent + wrapAccordionContent(agencyId, accordionElemContent) + '</div>';
+        addfooter();
     }
     tabContent += '</div>';
     return tabContent;
+    
 }
 
 let buildLinkContent = function(guidance){

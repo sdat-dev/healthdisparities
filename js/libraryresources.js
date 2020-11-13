@@ -70,9 +70,11 @@ let buildAgencyLibResources = function(distinctAgencies, libraryresources){
         });
 
         tabContent += '</div>';
+        addfooter();
     }
     tabContent += '</div>';
     return tabContent;
+    
 }
 
 let buildResourceInfo = function(resource){
