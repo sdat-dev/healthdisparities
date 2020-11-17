@@ -31,7 +31,7 @@ request.onload = function(){
         }
         else if(type == 'img')
         {
-            content += '<img src="assets/images/'+ element.content + '" alt="" style="width: 100%;">';
+            content += '<img src="assets/images/header23.png" alt="" style="width: 100%;">';
         }
         else if(type == 'iframe')
         {
@@ -104,10 +104,10 @@ let addheader =  function (headers){
         {
             content += '<div class="carousel-item">';
         }
-        content +=  '<img src="'+ source + image +'" class="d-block w-100" alt="...">'+
+        content +=  '<img src="assets/images/header23.png" class="d-block w-100" alt="...">'+
                     '<div id = "landing-page-text-wrapper">'+
-                        '<h1>'+ header1 +'</h1>' + 
-                        '<p>' + header2 + '</p>' +      
+                      //  '<h1>'+ header1 +'</h1>' + 
+                      //  '<p>' + header2 + '</p>' +      
                     '</div>'+
                 '</div>';
     }
