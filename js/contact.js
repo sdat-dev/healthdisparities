@@ -24,14 +24,22 @@ request.onload = function(){
         {
             let header = document.getElementsByClassName("content-header")[0];
             header.innerHTML = element.content.toUpperCase();
+            if(element.hasOwnProperty(style))
+                header.setAttribute('style', element.style);
         }
         else if(type == 'p')
         {
-            content += '<p>' + element.content + '</p>';
+            if(element.hasOwnProperty(style))
+                content += '<p style ="'+element.style+'">' + element.content + '</p>';
+            else
+                content += '<p>' + element.content + '</p>';
         }
         else if(type == 'img')
         {
-            content += '<img src="assets/images/'+ element.content + '" alt="" style="width: 100%;">';
+            if(element.hasOwnProperty(style))
+                content += '<img src="assets/images/'+ element.content + '" alt="" style="'+ element.style +'">';
+            else
+                content += '<img src="assets/images/'+ element.content + '" alt="" style="width: 100%;">';
         }
         else if(type == 'iframe')
         {
