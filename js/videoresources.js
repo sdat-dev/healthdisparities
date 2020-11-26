@@ -140,6 +140,8 @@ let buildVideoContent = function(videos){
                     '   <div class="videoWrapper wide-screen"><iframe  src="'+ youtubelink +'" allowfullscreen="true" autoplay="false"></iframe></div>' +
                     '   <h5 class="video-title">' + youtubelinks[i].title + '</h5>'+
                     '</div>';
+                    addfooter();
+
     }
     content += '</div>';
     return content;

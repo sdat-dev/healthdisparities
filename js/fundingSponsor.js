@@ -113,6 +113,8 @@ function getAccordiationData(p) {
         categoryCounter++;
     }
     appendMainContent(maincontentContainer, content);
+    addfooter();
+
 }
 
 let generateFederalAccordionContent = function (arr, img_url, funding_name) {
@@ -198,7 +200,6 @@ let generateFederalAccordionContent = function (arr, img_url, funding_name) {
             }
             else {
                 img_url = "assets/logos-funding-opportunities/SPIN_logo.png";
-               // console.log("ddd");
             }
         }
         var description = arr[i].synopsis.replace(/<[^>]*>/g, '');
