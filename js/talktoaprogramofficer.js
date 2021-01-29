@@ -12,12 +12,12 @@ request.onload = function(){
     //condition for checking if browser is Internet Explorer
     let pointsofcontact =  ((false || !!document.documentMode))? JSON.parse(pointsofcontactjson): pointsofcontactjson;
     let distinctAgencies = getDistinctAttributes(pointsofcontact, 'acronym');
-    distinctAgencies = customSort(agencies_sort, distinctAgencies);
+    // distinctAgencies = customSort(agencies_sort, distinctAgencies);
 
     let navContent = createAgencyNavigation(distinctAgencies);
     let tabContent = buildAgencyContacts(distinctAgencies, pointsofcontact);
     
-    updatecontentHeading("Points of Contact");
+    // updatecontentHeading("Points of Contact");
     //appendPostDate(maincontentContainer, pointsofcontact[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }

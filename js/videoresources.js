@@ -12,11 +12,11 @@ request.onload = function(){
     //condition for checking if browser is Internet Explorer
     let videoresources =  ((false || !!document.documentMode))? JSON.parse(videoresourcesjson): videoresourcesjson;
     let distinctAgencies = getDistinctAttributes(videoresources, 'acronym');
-    distinctAgencies = customSort(agencies_sort, distinctAgencies);
+    // distinctAgencies = customSort(agencies_sort, distinctAgencies);
 
     let navContent = createAgencyNavigation(distinctAgencies);
     let tabContent = buildAgencyVideos(distinctAgencies, videoresources);
-    updatecontentHeading("Video Resources");
+    // updatecontentHeading("Video Resources");
     //appendPostDate(maincontentContainer, videoresources[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }
