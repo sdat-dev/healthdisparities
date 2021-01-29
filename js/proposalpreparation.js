@@ -38,12 +38,12 @@ request.onload = function(){
     //condition for checking if browser is Internet Explorer
     let proposalGuidance =  ((false || !!document.documentMode))? JSON.parse(proposalGuidances): proposalGuidances;
     let distinctAgencies = getDistinctAttributes(proposalGuidance, 'agency');
-    distinctAgencies = customSort(agencies_sort, distinctAgencies);
+    // distinctAgencies = customSort(agencies_sort, distinctAgencies);
 
     let navContent = createAgencyNavigation(distinctAgencies, agencyAcronyms);
     let tabContent = buildAgencyTabContent(distinctAgencies, proposalGuidance, headers_sort, agencyAcronyms);
     
-    updatecontentHeading("Proposal Preparation");
+    // updatecontentHeading("Proposal Preparation");
     //appendPostDate(maincontentContainer, proposalGuidance[0].updateddate);
     appendMainContent(maincontentContainer, navContent + tabContent);
 }
@@ -101,7 +101,7 @@ let buildAgencyTabContent = function(distinctAgencies, proposalGuidance, headers
         let accordionCounter = 1;
         let distinctHeaders = getDistinctAttributes(agencyGuidance, 'mainheader');
         let accordionElemContent = '';
-        distinctHeaders = customSort(headers_sort, distinctHeaders);
+        // distinctHeaders = customSort(headers_sort, distinctHeaders);
         distinctHeaders.forEach(function(header) {
          
            let mainGuidances = agencyGuidance.filter(function(guidance){
