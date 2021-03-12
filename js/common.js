@@ -250,3 +250,8 @@ let customSort = function(sortOrder, objects){
     }
     return objects;
 }
+
+let updatecontentHeading = function(heading){
+    let header = document.getElementsByClassName("content-header")[0];
+    header.innerHTML = heading.toUpperCase();
+}
