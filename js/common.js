@@ -233,3 +233,20 @@ let appendMainContent = function(maincontentContainer, content){
     mainContentElement.innerHTML = content.trim();
     maincontentContainer.appendChild(mainContentElement);
 }
+
+let customSort = function(sortOrder, objects){
+    let i,j = 0;
+    for(i = 0; i< objects.length; i++)
+    {
+        for(j = 0; j < objects.length - (i+1); j++)
+        {
+            if(sortOrder.indexOf(objects[j]) > sortOrder.indexOf(objects[j+1]))
+            {
+                let swap = objects[j];
+                objects[j] = objects[j+1];
+                objects[j+1] = swap;
+            }
+        }
+    }
+    return objects;
+}
