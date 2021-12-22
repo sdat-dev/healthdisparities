@@ -81,7 +81,7 @@ let buildResourceInfo = function(resource){
     let content = '';
     content +=  '<div class="display-flex bookinfo search-container">' +
                     '<div class="col-xl-2 col-lg-3 ml-0 pl-0">'+
-                        '<img class="book-cover" src="assets/images/Book-Covers/'+ resource.image +'">'+
+                        '<img class="book-cover" width="130" src="assets/images/Book-Covers/'+ resource.image +'">'+
                     '</div>'+
                     '<div class="col-xl-10 col-lg-9 p-0">' +
                         '<h4 class="booktitle"><a href="' + resource.link + '"';
